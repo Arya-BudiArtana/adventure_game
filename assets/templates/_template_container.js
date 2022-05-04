@@ -10,7 +10,7 @@ GMPixi.other = GMPixi.other || Object.defineProperty(GMPixi, 'other', {
 }).other;
 
 
-Object.defineProperty(GMPixi.other, , {
+Object.defineProperty(GMPixi.other, {
     value: function (o) {
         this.room = o.room;
         GMPixi.object.Container.call(this);
@@ -18,11 +18,11 @@ Object.defineProperty(GMPixi.other, , {
     }
 }); 
 
-Object.defineProperty(GMPixi.other., 'prototype', {
+Object.defineProperty(GMPixi.other, 'prototype', {
     value: Object.create(GMPixi.object.Container.prototype)
 });
 
-Object.defineProperties(GMPixi.other..prototype, {
+Object.defineProperties(GMPixi.other.prototype, {
     reset: {
         value: function reset() {
             

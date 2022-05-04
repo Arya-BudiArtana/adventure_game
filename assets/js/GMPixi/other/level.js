@@ -20,14 +20,14 @@ Object.defineProperty(GMPixi.other, 'Level', {
             methods: {
                 init: function() {
                     //adds all key events here
-                    window.addEventListener('keydown', this.theKeyDown);
+                    window.addEventListener('touchstart', this.theclick);
                     window.addEventListener('keyup', this.theKeyUp);
                     
                 },
-                theKeyDown: function(e) {
+                theclick: function(e) {
                     if(e.keyCode === 37) this.button.left = true;
                     if(e.keyCode === 38) this.button.up = true;
-                    if(e.keyCode === 39) this.button.right = true;
+                    if(e.type == "touchstart") this.button.right = true;
                     if(e.keyCode === 32) this.button.space = true;
                 },
                 theKeyUp: function(e) {
@@ -48,7 +48,7 @@ Object.defineProperty(GMPixi.other, 'Level', {
                 exitRoom: function(notDead) {
                     
                     window.removeEventListener('keyup', this.theKeyUp);
-                    window.removeEventListener('keydown', this.theKeyDown);
+                    window.removeEventListener('click', this.theclick);
                     
                     if(notDead) {
                         if(this.nextLevel === 'win') {

@@ -34,7 +34,7 @@ window.onload = function() {
         postload: function() {
             //remove default from keypresses of space and the directional keys
             //to avoid some unwanted behaviors
-            window.addEventListener('keydown', function(e){
+            window.addEventListener('click', function(e){
                 if(GMPixi.isOneOf(e.keyCode, [32, 37, 38, 39, 40])) {
                     e.preventDefault();
                 }
@@ -253,10 +253,10 @@ window.onload = function() {
             title: {
                 methods: {
                     start: function(e) {
-                        if(e.keyCode === 32) {
+                        if(e.type == "click") {
                             //so that this will not be used and called on
                             //the other rooms
-                            window.removeEventListener('keyup', this.start);
+                            window.removeEventListener('click', this.start);
                             
                             //animate the transition to the next room
                             this.cont.animate = true;
@@ -288,7 +288,7 @@ window.onload = function() {
                     this.title = this.addTo(new GMPixi.other.Title({
                         room: this.room,
                         next: function() {
-                            window.addEventListener('keyup', this.start);
+                            window.addEventListener('click', this.start);
                             this.prompt.animate = true;
                         }.bind(this)
                     }), this.cont, this.room.width/2, 0, 0.5);

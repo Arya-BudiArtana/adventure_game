@@ -18,11 +18,11 @@ Object.defineProperty(GMPixi.other,  {
     }
 }); 
 
-Object.defineProperty(GMPixi.other., 'prototype', {
+Object.defineProperty(GMPixi.other, 'prototype', {
     value: Object.create(PIXI.Sprite.prototype)
 });
 
-Object.defineProperties(GMPixi.other..prototype, {
+Object.defineProperties(GMPixi.other.prototype, {
     reset: {
         value: function reset() {
             
