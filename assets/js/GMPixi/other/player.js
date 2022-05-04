@@ -124,8 +124,13 @@ Object.defineProperties(GMPixi.other.Player.prototype, {
             
             //updates vspeed based on inputs
             if(!this.jump && this.vy === 0 && this.button.space) {
-                this.vy = -this.movespeed.y;
+                this.vy = -13;
                 this.jump = true;
+
+            }
+
+            if(this.jump && this.vy === -11) {
+                this.button.right = true
             }
             
             //updates hspeed base on inputs

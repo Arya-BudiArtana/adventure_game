@@ -48,7 +48,7 @@ Object.defineProperty(GMPixi.other, "Level", {
             var currentTime = new Date().getTime();
             var tapLength = currentTime - lastTap;
             clearTimeout(timeout);
-            if (tapLength < 400 && tapLength > 0) {
+            if (tapLength < 500 && tapLength > 0) {
                 this.button.space = true;
                 event.preventDefault();
             }
